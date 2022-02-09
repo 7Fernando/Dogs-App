@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap');
+
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Secular+One&display=swap");
+.ul {
+  display: flex;
+  list-style: none;
+  /* align-content: center; */
+  padding-left: 20%;
+  
+}
+
+.btn {
+ 
+  border: none;
+  margin-right: 5px;
+  background-color: rgb(255, 255, 255);
+
+}
+.btn:hover{
+    background-color: aquamarine;
+    transform: translateY(-18%);
+}
+/* .cont:hover {
+   box-shadow: 0px -2px, 0px 2px;
+   background-color: rgb(255, 127, 127);
+} */
+.link:hover {
+    transform: translateY(-3%);
+   
+}
+
+.link {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-family: 'Secular One';
+}

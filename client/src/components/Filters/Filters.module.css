@@ -1,0 +1,13 @@
+.menuUl{
+    list-style: none;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-evenly;
+    width: 150%;
+    padding-left: 0px;
+    margin-top: 0px;
+}
+.li{
+    /* display: inline-block; */
+    /* text-align: center; */
+}

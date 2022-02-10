@@ -56,10 +56,6 @@ const Home = () => {
           <li>
             <AiFillHome className={styles.home2} onClick={refreshPage} />
           </li>
-          
-            
-         
-
           <li className={styles.li}>
             <SearchBar />
           </li>

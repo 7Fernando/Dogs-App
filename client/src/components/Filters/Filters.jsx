@@ -39,50 +39,58 @@ const Filters = () => {
   return (
     <div>
       <ul className={s.menuUl}>
-        <li className={s.li}>
-          <label htmlFor="Order">Order by name: </label>
-          <select onChange={(e) => order(e)}>
-            <option value="choose" hidden>
-              {" "}
-              Choose order{" "}
-            </option>
-            <option defaultValue value="asc">
-              {" "}
-              A - Z{" "}
-            </option>
-            <option value="des"> Z - A </option>
-          </select>
-          <br /> <br />
-        </li>
-        <li className={s.li}>
-          <label htmlFor=""> Order by weigth: </label>
-          <select onChange={(e) => weight(e)}>
-            <option value="choose" hidden>
-              Choose weight{" "}
-            </option>
-            <option value="wmin"> Min weight </option>
-            <option value="wmax"> Max weight </option>
-          </select>
-          <br /> <br />
-        </li>
-        <li className={s.li}>
-        <label htmlFor=""> Filter by origin: </label>
-        <select onChange={(e) => origin(e)}>
-          <option value="choose" hidden>
-            {" "}
-            Choose origin{" "}
-          </option>
-          <option value="Dogs_from_DB"> Dogs created </option>
-          <option value="Dogs_from_API"> Dogs from API </option>
-        </select>
-        <br /> <br />
-        </li>
-        <li className={s.li}>
-        <label>
-          {" "}
-          Filter by temperaments: <Temperaments onClick={temperament} />{" "}
-        </label>
-        {/*<label htmlFor="">Filter by temperament: </label>
+        <div className={s.container}>
+          <li className={s.li} >
+            {/* <label htmlFor="Order">Order by name: </label> */}
+            <select onChange={(e) => order(e)} className={s.select}>
+              <option value="choose" hidden >
+                {" "}
+                Order by name{" "}
+              </option>
+              <option defaultValue value="asc" >
+                {" "}
+                A - Z{" "}
+              </option>
+              <option value="des" className={s.option}> Z - A </option>
+            </select>
+            <br /> <br />
+          </li>
+        </div>
+
+        <div className={s.container}>
+          <li className={s.li}>
+            {/* <label htmlFor=""> Order by weigth: </label> */}
+            <select onChange={(e) => weight(e)} className={s.select}>
+              <option value="choose" hidden>
+                Order by weight{" "}
+              </option>
+              <option value="wmin"> Min weight </option>
+              <option value="wmax"> Max weight </option>
+            </select>
+            <br /> <br />
+          </li>
+        </div>
+
+        <div className={s.container}>
+          <li className={s.li}>
+            {/* <label htmlFor=""> Filter by origin: </label> */}
+            <select onChange={(e) => origin(e)} className={s.select}>
+              <option value="choose" hidden>
+                {" "}
+                Filter by origin:{" "}
+              </option>
+              <option value="Dogs_from_DB"> Dogs created </option>
+              <option value="Dogs_from_API"> Dogs from API </option>
+            </select>
+            <br /> <br />
+          </li>
+        </div>
+
+        <div className={s.container}>
+          <li className={s.li}>
+            <Temperaments onClick={temperament} />
+
+            {/*<label htmlFor="">Filter by temperament: </label>
         <br />
 
        {temperaments.map((t, i) => {
@@ -96,7 +104,8 @@ const Filters = () => {
             </React.Fragment>
           );
         })} */}
-        </li>
+          </li>
+        </div>
       </ul>
     </div>
   );

@@ -1,13 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Secular+One&display=swap");
+
 .menuUl{
     list-style: none;
-    background-color: rgb(245, 0, 0);
+    background-color: transparent;
     display: flex;
     justify-content: space-evenly;
-    width: 150%;
+    /* width: 200%; */
     padding-left: 0px;
     margin-top: 0px;
+    align-items:baseline;
+    align-content: space-between;
+  
+    min-width:  100%;
 }
 .li{
     /* display: inline-block; */
     /* text-align: center; */
+}
+.select{
+    border: none;
+    box-shadow: 1px 1px 11px black;
+    background-color: transparent;
+    font-size: 1.2rem;
+    margin-left: 25px;
+    font-family: 'Secular One';
+    cursor:pointer;
+    padding: 10px;
+    outline: none;
+}
+.option{
+  
+  padding-right: 50px;
+}
+.container{
+    background-color: transparent;
+    font-size: 1.2rem;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.container:hover{
+    transform: translateY(-18%);
+    transition: 1.1s;
+}
+.select:hover{
+   background-color: aquamarine;
+}
+.select:active{
+    background-color: aquamarine;
 }

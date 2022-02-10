@@ -3,6 +3,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getTemperaments } from "../../redux/actions/actions";
+import s from './Temperaments.module.css'
 
 const Temperaments = ({onClick}) => {
 
@@ -18,7 +19,11 @@ const Temperaments = ({onClick}) => {
   return (
     <div>
       <label htmlFor="temperaments"> </label>
-      <select name="temperaments" onChange={onClick}>
+      <select name="temperaments" onChange={onClick} className={s.select}>
+      <option value="choose" hidden>
+            {" "}
+            Filter by temperament:{" "}
+          </option>
           {
               state.map( t => <option value={t} key={t}> {t} </option>)
           }

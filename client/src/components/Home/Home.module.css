@@ -7,6 +7,42 @@
     margin-top: 0px;
   
 }
+/* .home{
+    border: none;
+    
+    box-shadow: 2px 4px 15px -8px rgba(0,0,0,1);
+    font-size: 1rem;
+    color: rgb(0, 0, 0);
+  
+    background-color: transparent;
+  padding-bottom: 0px;
+    border-radius: 3%;
+     margin-right: 15px;
+    
+    text-transform: uppercase; 
+    font-family: 'Secular One';
+    margin-left: 0px;
+
+} */
+.home2{
+    border: none;
+    
+    box-shadow: 2px 4px 15px -8px rgba(0,0,0,1);
+    font-size: 1rem;
+    color: rgb(0, 0, 0);
+    
+    background-color: transparent;
+    padding: 5px;
+    border-radius: 3%;
+     margin-right: 1px;
+  
+    text-transform: uppercase; 
+    font-family: 'Secular One';
+    width: 1.5rem;
+    font-size: 1.5rem;
+    height: 54%;
+}
+
 .li{
     /* display: inline-block; */
     /* text-align: center; */
@@ -36,7 +72,7 @@
     text-transform: uppercase; 
     font-family: 'Secular One';
 }
-.btn:hover{
+.btn:hover,.home:hover, .home2:hover{
     transform: translateY(-13%);
     /* color: rgb(0, 0, 0);*/
     background-color: aquamarine; 

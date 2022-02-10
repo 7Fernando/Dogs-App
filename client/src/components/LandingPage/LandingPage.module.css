@@ -16,8 +16,8 @@ body {
 }
 
 .derecha {
-  background-color: aqua;
-  /* background-image: url(./../assets/agua.png); */
+  /* background-color: aqua; */
+  background-image: url(./../../assets/agua.png);
   background-size: cover;
   background-position: center;
   width: 65%;

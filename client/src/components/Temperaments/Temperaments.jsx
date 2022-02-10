@@ -22,7 +22,7 @@ const Temperaments = ({onClick}) => {
       <select name="temperaments" onChange={onClick} className={s.select}>
       <option value="choose" hidden>
             {" "}
-            Filter by temperament:{" "}
+            Temperaments:{" "}
           </option>
           {
               state.map( t => <option value={t} key={t}> {t} </option>)

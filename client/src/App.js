@@ -6,7 +6,8 @@ import Home from "./components/Home/Home";
 import Temperaments from './components/Temperaments/Temperaments'
 import CreateDog from "./components/CreateDog/CreateDog";
 import DogDetails from "./components/DogDetails/DogDetails";
-
+import { AiFillHome } from "react-icons/ai";
+//className={styles.home2} onClick={refreshPage} 
 function App() {
   return ( 
     <div className="App">
@@ -15,7 +16,7 @@ function App() {
 
         <Route path="/home" element={<Home />} />
         <Route path="/temperament" element={<Temperaments />} />
-        <Route path="/dog" element={<CreateDog/>}/>
+        <Route path="/dog" element={<> <CreateDog/>  <AiFillHome /></> }/>
         <Route path="/dogs/:idRaza" element={<DogDetails />}/>
       </Routes>
     </div>

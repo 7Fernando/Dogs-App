@@ -55,11 +55,11 @@ const CreateDog = () => {
     if (!input2.life_span) {
       errors2.life_span = "Life span is required";
     }
-    if (input2.life_span && input2.life_span < 8) {
-      errors2.life_span = "Must be greater than 7 and less than 30";
+    if (input2.life_span && input2.life_span < 7) {
+      errors2.life_span = "7 years is the minimum life span of a dog";
     }
     if (input2.life_span && input2.life_span > 30) {
-      errors2.life_span = "Must be greater than 7 and less than 30";
+      errors2.life_span = "Unfortunately, 30 years is the maximum life span of a dog";
     }
 
     if (input2.height_min > input2.height_max) {
@@ -111,10 +111,10 @@ const CreateDog = () => {
       input.life_span !== "";
     if (y) {
       dispatch(createDog(input));
-    } else console.log("Debes llenar todos los campos");
-    console.log(input);
+    } else window.prompt("Hola");
+   
   }
-  function handleDeleteTemperament(e) {
+  function deleteTemperament(e) {
     setInput({
       ...input,
       temperament: input.temperament.filter((temperament) => temperament !== e),
@@ -134,7 +134,9 @@ const CreateDog = () => {
             onChange={handleInput}
             className={s.input}
             placeholder="Paco"
+            // required
           />
+          {errors.name && <p className={s.msg}>{errors.name}</p>}
         </div>
 
         <div className={s.name}>
@@ -145,7 +147,9 @@ const CreateDog = () => {
             onChange={handleInput}
             className={s.input}
             placeholder="11 cm"
+           // required
           />
+          {errors.height_min && <p className={s.msg}>{errors.height_min}</p>}
         </div>
 
         <div className={s.name}>
@@ -156,7 +160,9 @@ const CreateDog = () => {
             onChange={handleInput}
             className={s.input}
             placeholder="90 cm"
+            //required
           />
+          {errors.height_max && <p className={s.msg}>{errors.height_max}</p>}
         </div>
 
         <div className={s.name}>
@@ -167,7 +173,9 @@ const CreateDog = () => {
             onChange={handleInput}
             className={s.input}
             placeholder="5 kgs"
+            //required
           />
+          {errors.weight_min && <p className={s.msg}>{errors.weight_min}</p>}
         </div>
 
         <div className={s.name}>
@@ -178,7 +186,9 @@ const CreateDog = () => {
             onChange={handleInput}
             className={s.input}
             placeholder="150 kgs"
+            //required
           />
+          {errors.weight_max && <p className={s.msg}>{errors.weight_max}</p>}
         </div>
         <div className={s.name}>
           <label htmlFor="life_span">Life span: </label>
@@ -188,7 +198,9 @@ const CreateDog = () => {
             placeholder="15 years"
             onChange={handleInput}
             className={s.input}
+            //required
           />
+          {errors.life_span && <p className={s.msg}>{errors.life_span}</p>}
         </div>
 
         <div className={s.name}>
@@ -202,7 +214,9 @@ const CreateDog = () => {
             className={s.input}
           />
         </div>
-        <button type="submit" className={s.subbtn}>Create!</button>
+        <button type="submit" className={s.subbtn}>
+          Create!
+        </button>
       </form>
       <form className={s.form2} onSubmit={handleOnSubmit}>
         <div className={s.name2}>
@@ -212,22 +226,20 @@ const CreateDog = () => {
           {input.temperament.map((e) => {
             return (
               <span key={e}>
-                
                 <div className={s.byt}>
                   <button
                     className={s.btn}
-                    onClick={() => handleDeleteTemperament(e)}
+                    onClick={() => deleteTemperament(e)}
                   >
                     X
                   </button>{" "}
                   <div>
-                    <p  >
+                    <p>
                       <p className={s.t}>{e}</p>
                     </p>
                   </div>
-                 
-               </div>
-                {/*onClick={() => handleDeleteTemperament(e)} */}
+                </div>
+                
               </span>
             );
           })}

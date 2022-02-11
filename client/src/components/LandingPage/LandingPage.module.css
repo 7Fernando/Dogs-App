@@ -8,7 +8,7 @@ body {
 
 #container {
   display: flex;
-
+background-color: transparent;
 }
 
 .izquierda {
@@ -36,10 +36,12 @@ body {
   background-size: cover; 
  
   background-color: rgba(0, 0, 0, 0.6);
-  animation: animate 15s ease infinite;
+  animation: animate 70s  ease-in-out infinite;
   background-size: cover;
   background-color: transparent;
   /* transition-delay: 21s; */
+ /* transition-property:background-image ,animation;
+ transition-duration: 10s; */
 }
 
 @keyframes animate {
@@ -56,10 +58,12 @@ body {
    
   }
   75% {
-    background-image: url(./../../assets/rot2.png);
+    background-image: url(./../../assets/chiii.png);
+   /* animation-duration: 5s; */
   }
   100%{
-    background-image: url(./../../assets/ret1.png);
+    background-image: url(./../../assets/sib.png);
+    /* animation-duration: 2s; */
   }
 }
 

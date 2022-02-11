@@ -8,6 +8,7 @@ body {
 
 #container {
   display: flex;
+
 }
 
 .izquierda {
@@ -33,30 +34,32 @@ body {
   height: 100vh;
 
   background-size: cover; 
-  /* transition-delay: 35s; */
+ 
   background-color: rgba(0, 0, 0, 0.6);
-  animation: animate 25s ease-in-out infinite;
+  animation: animate 15s ease infinite;
   background-size: cover;
+  background-color: transparent;
+  /* transition-delay: 21s; */
 }
 
 @keyframes animate {
-  0%,
-  100% {
-    background-image: url(./../../assets/fash1.png);
- 
+  0% {
+   
+    background-image: url(./../../assets/ret1.png);
   }
   25% {
-    background-image: url(./../../assets/pug.jpg);
+    background-image: url(./../../assets/ambospng.png);
    
   }
   50% {
-    background-image: url(./../../assets/agua.png);
+    background-image: url(./../../assets/fash1.png);
    
   }
   75% {
-    background-image: url(./../../assets/fash1.png);
-    background-color: transparent;
-    
+    background-image: url(./../../assets/rot2.png);
+  }
+  100%{
+    background-image: url(./../../assets/ret1.png);
   }
 }
 

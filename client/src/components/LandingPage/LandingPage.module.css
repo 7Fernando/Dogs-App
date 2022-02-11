@@ -19,19 +19,47 @@ body {
   /* align-items: center;
   align-content: center; */
   font-size: 1.5rem;
-  background-color: rgb(255, 255, 255);
+  background-color: transparent;
+  /* background-color: rgba(0,0,0,0.6); */
   justify-content: center;
 }
 
 .derecha {
   /* background-color: aqua; */
-  background-image: url(./../../assets/agua.png);
-  background-size: cover;
+  /* background-image: url(./../../assets/agua.png); */
+
   background-position: center;
   width: 65%;
   height: 100vh;
-  /* animation: 16s ease-in-out infinite; */
+
+  background-size: cover; 
+  /* transition-delay: 35s; */
+  background-color: rgba(0, 0, 0, 0.6);
+  animation: animate 25s ease-in-out infinite;
+  background-size: cover;
 }
+
+@keyframes animate {
+  0%,
+  100% {
+    background-image: url(./../../assets/fash1.png);
+ 
+  }
+  25% {
+    background-image: url(./../../assets/pug.jpg);
+   
+  }
+  50% {
+    background-image: url(./../../assets/agua.png);
+   
+  }
+  75% {
+    background-image: url(./../../assets/fash1.png);
+    background-color: transparent;
+    
+  }
+}
+
 .link {
   color: black;
   text-decoration: none;
@@ -54,7 +82,6 @@ body {
   box-shadow: 1px 1px 5px 1px black;
   /* padding: 0px; */
   background-color: aquamarine;
-  
 }
 
 .h1 {

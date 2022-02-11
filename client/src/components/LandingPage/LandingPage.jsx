@@ -11,7 +11,9 @@ import "animate.css";
 
 const LandingPage = () => {
   return (
+  
     <section id={styles.container}>
+  
       <div className={styles.izquierda}>
         <Link to="/home" className={styles.link}>
           <div className={styles.elem}>
@@ -25,7 +27,9 @@ const LandingPage = () => {
       </div>
 
       <div className={styles.derecha}></div>
+      
     </section>
+ 
   );
 };
 

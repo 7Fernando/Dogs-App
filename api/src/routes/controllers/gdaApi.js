@@ -26,6 +26,7 @@ const dogsApi = async () => {
       height_min: Number(dog.height.metric.slice(0, 1)),
       height_max: Number(dog.height.metric.slice(4)),
       life_span: dog.life_span,
+     
     };
   });
   //console.log(dogMainInfo[0].temperament)

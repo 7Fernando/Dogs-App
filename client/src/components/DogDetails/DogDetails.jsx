@@ -19,7 +19,7 @@ const DogDetails = () => {
   }, [dispatch, idRaza]);
  
 
-  
+
 
   return dogs?.map((e, i) => (
     <div key={e.id} className={s.container}>

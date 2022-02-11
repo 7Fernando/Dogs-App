@@ -5,22 +5,41 @@
   align-content: center;
 }
 .home {
- position: absolute;
- text-decoration: none;
- color: black;
- font-size: 2rem;
- margin-left: 31%;
- margin-top: 1%;
- background-color: transparent;
+  position: absolute;
+  text-decoration: none;
+  color: black;
+  margin-left: 31%;
+  margin-top: 1%;
+  background-color: transparent;
 }
-.home:hover {
-    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
-    transform: translateY(-3%);
-    background-color: aquamarine;
-  }
-.card:hover {
+/* .home:hover {
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
   transform: translateY(-3%);
+  background-color: transparent;
+} */
+
+.imgHomes {
+  height: 25px;
+  width: 25px;
+  box-shadow: 2px 4px 15px -8px rgba(0, 0, 0, 1);
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 8px;
+  padding: 5px;
+  border-radius: 5%;
+  transition-property: transform, background-color;
+  transition-duration: 1.2s;
+}
+.imgHomes:hover {
+  transform: translateY(-13%);
+  background-color: aquamarine;
+}
+
+.card:hover {
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+  transform: translateY(-1%);
 }
 
 .card {
@@ -31,7 +50,7 @@
   font-size: 12px;
   /* border: solid aquamarine 3px; */
   padding: 0px;
-  margin: 10px;
+  margin: 20px;
   border-radius: 3%;
   width: 400px;
   /* height: 670px; */
@@ -39,6 +58,8 @@
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: column;
+  transition-property: transform,  box-shadow;
+  transition-duration: 1s;
 }
 
 .temperaments {
@@ -74,13 +95,12 @@
   /* border:solid 0.5px black; */
   border-radius: 15px;
   padding: 5px;
-  
 }
-.lspan{
-    font-size: 1.1rem;  
-    
-    background-color: yellow;
-    border-radius: 15px;
-    display: inline-block;
-    padding: auto;
+.lspan {
+  font-size: 1.1rem;
+
+  background-color: yellow;
+  border-radius: 15px;
+  display: inline-block;
+  padding: auto;
 }

@@ -1,26 +1,31 @@
 import React from "react";
 import s from "./DogDetails.module.css";
-import { AiFillHome } from "react-icons/ai";
+// import { AiFillHome } from "react-icons/ai";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { findByID } from "../../redux/actions/actions";
 import { Link } from "react-router-dom";
+import HomeIcon from "../../assets/homeIcon.png";
 
 const DogDetails = () => {
   const { idRaza } = useParams();
   const dispatch = useDispatch();
-  const dogs = useSelector((s) => s.dogs);
+  const dogs = useSelector((s) => s.dogs); 
 
   useEffect(() => {
     dispatch(findByID(idRaza));
+    window.scrollTo(0, 0);
   }, [dispatch, idRaza]);
  
+
+  
 
   return dogs?.map((e, i) => (
     <div key={e.id} className={s.container}>
        <Link to="/home" className={s.home}>
-          <AiFillHome className={s.home} />
+          {/* <AiFillHome className={s.home} /> */}
+          <img src={HomeIcon} alt="Home Icon" className={s.imgHomes} />
         </Link>
       <div className={s.card}>
        

@@ -49,7 +49,7 @@
 .btn{
     border: none;
     box-shadow: 2px 4px 15px -8px rgba(0,0,0,1);
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: rgb(0, 0, 0);
     background-color: transparent;
     padding: 5px;
@@ -57,9 +57,29 @@
     text-transform: uppercase; 
     font-family: 'Secular One';
     margin-left: 35px;
+    transition-property:transform, background-color ;
+    transition: 1.3s;
     
 }
 .btn:hover,.home:hover, .home2:hover{
+    transform: translateY(-13%);
+    background-color: aquamarine; 
+}
+
+.imgHomes{
+    height: 25px;
+    width: 25px;
+    box-shadow: 2px 4px 15px -8px rgba(0,0,0,1);
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 5px;
+    border-radius: 5%;
+    transition-property: transform, background-color;
+    transition-duration: 1.2s;
+}
+.imgHomes:hover{
     transform: translateY(-13%);
     background-color: aquamarine; 
 }

@@ -13,16 +13,20 @@ const Pagination = ({ dogsPerPage, totalDogs, paginate }) => {
     window.scrollTo(0, 0);
   }, [paginate]);
 
-  return (
+
+
+  return ( 
     <nav>
       <ul className={s.ul}>
         {pageNumbers.map((number) => (
           <div className={s.cont} key={number}>
-          <button  className={s.btn}>
+            {/* className={`${buttonStyle} ${disabled ? 'class1' : 'class2'}`} */}
+          <button  className={ s.btn}>
             <li className={s.li}>
               {/* <a onClick={()=>paginate(number)}href='#'>{number}</a> */}
-              <Link to="/home" onClick={() => paginate(number)} className={s.link}>
+              <Link to="/home" onClick={() => paginate(number)}className={s.link}>
                 {number}
+              
               </Link>
             </li>
           </button>

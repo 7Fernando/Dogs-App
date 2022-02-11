@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { createDog } from "../../redux/actions/actions";
 import Temperaments from "../Temperaments/Temperaments";
-import { AiFillHome } from "react-icons/ai";
+// import { AiFillHome } from "react-icons/ai";
+import HomeIcon from '../../assets/homeIcon.png'
 
 const CreateDog = () => {
   const [input, setInput] = useState({
@@ -148,7 +149,8 @@ const CreateDog = () => {
   return (
     <div className={s.container}>
       <Link to="/home" className={s.home}>
-        <AiFillHome className={s.home} />
+        {/* <AiFillHome className={s.home} /> */}
+        <img src={HomeIcon} alt="Home-Icon" className={s.imgHomes} />
       </Link>
       <form id="form" onSubmit={handleOnSubmit} className={s.form}>
         <div className={s.name}>

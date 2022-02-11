@@ -9,7 +9,8 @@ import { useEffect, useState } from "react";
 import Filters from "../Filters/Filters";
 import { Link } from "react-router-dom";
 import SearchBar from "../SearchBar/SearchBar";
-import { AiFillHome } from "react-icons/ai";
+// import { AiFillHome } from "react-icons/ai";
+import HomeIcon from "../../assets/homeIcon.png";
 
 const Home = () => {
   //const [loading, setLoading] = useState(false);
@@ -34,7 +35,12 @@ const Home = () => {
       <div>
         <h2>DOG NOT FOUND</h2>
         <Link to="/home">
-           <AiFillHome className={styles.home2} onClick={refreshPage} />
+          <img
+            src={HomeIcon}
+            alt="Home-Icon"
+            className={styles.imgHomes}
+            onClick={refreshPage}
+          />
         </Link>
       </div>
     );
@@ -46,15 +52,21 @@ const Home = () => {
     //console.log(indexOfFirstDog);
     const currentDogs = dogs.slice(indexOfFirstDog, indexOfLastDog); //8 objetos
     //console.log(currentDogs);
-
+  
     //Change Page
     let paginate = (number) => setCurrentPage(number);
 
-    return ( 
+    return (
       <div>
         <ul className={styles.ul1}>
           <li>
-            <AiFillHome className={styles.home2} onClick={refreshPage} />
+            {/* <AiFillHome className={styles.home2} onClick={refreshPage} /> */}
+            <img
+              src={HomeIcon}
+              alt="Home-Icon"
+              className={styles.imgHomes}
+              onClick={refreshPage}
+            />
           </li>
           <li className={styles.li}>
             <SearchBar />

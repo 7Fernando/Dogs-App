@@ -43,11 +43,11 @@ const Filters = () => {
           <li className={s.li} >
             {/* <label htmlFor="Order">Order by name: </label> */}
             <select onChange={(e) => order(e)} className={s.select}>
-              <option value="choose" hidden >
+              <option value="choose" hidden className={s.option} >
                 {" "}
                 Order by name{" "}
               </option>
-              <option defaultValue value="asc" >
+              <option defaultValue value="asc"  className={s.option}>
                 {" "}
                 A - Z{" "}
               </option>

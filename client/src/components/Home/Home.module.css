@@ -33,6 +33,7 @@
 .li{
     /* display: inline-block; */
     /* text-align: center; */
+    
 }
 .ul1{
     list-style: none;
@@ -41,7 +42,7 @@
     justify-content: center;
     padding-left: 0px;
     margin-bottom: 15px;
-   
+    
 
 }
 
@@ -56,6 +57,7 @@
     text-transform: uppercase; 
     font-family: 'Secular One';
     margin-left: 35px;
+    
 }
 .btn:hover,.home:hover, .home2:hover{
     transform: translateY(-13%);

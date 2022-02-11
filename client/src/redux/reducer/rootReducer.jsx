@@ -89,7 +89,7 @@ const rootReducer = (state = initialState, action) => {
 
     case "findByID":
       let idDog = action.payload;
-      //console.log(idDog);
+      console.log(idDog);
       return{
         ...state,
         dogs: idDog

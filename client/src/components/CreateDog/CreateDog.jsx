@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import s from "./CreateDog.module.css";
+import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { createDog } from "../../redux/actions/actions";
 import Temperaments from "../Temperaments/Temperaments";
+import { AiFillHome } from "react-icons/ai";
 
 const CreateDog = () => {
   const [input, setInput] = useState({
@@ -59,7 +62,8 @@ const CreateDog = () => {
       errors2.life_span = "7 years is the minimum life span of a dog";
     }
     if (input2.life_span && input2.life_span > 30) {
-      errors2.life_span = "Unfortunately, 30 years is the maximum life span of a dog";
+      errors2.life_span =
+        "Unfortunately, 30 years is the maximum life span of a dog";
     }
 
     if (input2.height_min > input2.height_max) {
@@ -97,11 +101,15 @@ const CreateDog = () => {
   //console.log(input.temperament);
   const dispatch = useDispatch();
 
+  function refreshPage() {
+    window.location.reload(false);
+  }
+
   function handleOnSubmit(e) {
     e.preventDefault();
     // console.log(input);
     console.log(e);
-    const y =
+    const validation =
       input.temperament.length > 0 &&
       input.name !== "" &&
       input.height_min !== "" &&
@@ -109,10 +117,26 @@ const CreateDog = () => {
       input.weight_min !== "" &&
       input.weight_max !== "" &&
       input.life_span !== "";
-    if (y) {
+    if (validation) {
       dispatch(createDog(input));
-    } else window.prompt("Hola");
-   
+      Swal.fire({
+        title: "Dog created!",
+        // text: 'Do you want to continue',
+        icon: "success",
+        confirmButtonText: "GREAT!",
+        timer: 4000,
+        timerProgressBar: true,
+      });
+      setTimeout(() => {
+        refreshPage();
+      }, 5000);
+    } else
+      Swal.fire({
+        title: "You must fill all the fields!",
+        // text: 'Do you want to continue',
+        icon: "info",
+        confirmButtonText: "GREAT!",
+      });
   }
   function deleteTemperament(e) {
     setInput({
@@ -123,6 +147,9 @@ const CreateDog = () => {
   //form action="The action attribute specifies where to send the form-data when a form is submitted.">
   return (
     <div className={s.container}>
+      <Link to="/home" className={s.home}>
+        <AiFillHome className={s.home} />
+      </Link>
       <form id="form" onSubmit={handleOnSubmit} className={s.form}>
         <div className={s.name}>
           <label htmlFor="name" className={s.label}>
@@ -147,7 +174,7 @@ const CreateDog = () => {
             onChange={handleInput}
             className={s.input}
             placeholder="11 cm"
-           // required
+            // required
           />
           {errors.height_min && <p className={s.msg}>{errors.height_min}</p>}
         </div>
@@ -213,6 +240,7 @@ const CreateDog = () => {
             onChange={handleInput}
             className={s.input}
           />
+          {errors.weight_min && <p className={s.msg2}>optional</p>}
         </div>
         <button type="submit" className={s.subbtn}>
           Create!
@@ -239,7 +267,6 @@ const CreateDog = () => {
                     </p>
                   </div>
                 </div>
-                
               </span>
             );
           })}

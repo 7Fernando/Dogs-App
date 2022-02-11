@@ -17,8 +17,7 @@ const Temperaments = ({onClick}) => {
 
  
   return (
-    <div>
-      <label htmlFor="temperaments"> </label>
+    <div className={s.container}>
       <select name="temperaments" onChange={onClick} className={s.select}>
       <option value="choose" hidden>
             {" "}

@@ -13,10 +13,11 @@
   
     min-width:  100%;
 }
-.li{
-    /* display: inline-block; */
-    /* text-align: center; */
-}
+/* .li:hover{
+  background-color: aquamarine;
+  color: aquamarine
+  
+} */
 .select{
     border: none;
     box-shadow: 1px 1px 11px black;
@@ -30,22 +31,31 @@
 }
 .option{
   
-  padding-right: 50px;
+  padding-right: 50px; 
 }
 .container{
     background-color: transparent;
     font-size: 1.2rem;
-  display: flex;
-  flex-wrap: wrap;
-
+    display: flex;
+    flex-wrap: wrap;
+    transition-property: transform;
+    transition-duration: 1.3s;
 }
 .container:hover{
     transform: translateY(-18%);
-    transition: 1.1s;
+    
 }
-.select:hover{
+ .select:hover{
    background-color: aquamarine;
+   /* color: aquamarine; */
+}
+/*.container:active{
+  color: aquamarine;
 }
 .select:active{
+  color: aquamarine;
+}*/
+/* .option:active{
     background-color: aquamarine;
-}
+    color: aquamarine;
+}  */

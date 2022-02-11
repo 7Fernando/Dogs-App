@@ -1,24 +1,26 @@
 
 .link {
-  display: flex;
+  /* display: flex;
   justify-content: center;
   flex-wrap: wrap;
   align-content: space-between;
   display: inline-block;
+  text-decoration: none; */
   text-decoration: none;
-  
+  font-size: 1.4rem;
 }
-.card:hover{
- box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
- transform: translateY(-3%);
 
-}
 .container {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-around;
 }
+.card:hover{
+  box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+  transform: translateY(-3%);
+ 
+ }
 .card {
   background-color: hsla(0, 0%, 100%, 0.815);
   color: #000000;
@@ -33,7 +35,9 @@
   height: 600px;
   
   box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
-  
+  overflow: hidden;
+  transition-property:  box-shadow,transform;
+  transition-duration: 1.3s;
 }
 
 .temperaments {

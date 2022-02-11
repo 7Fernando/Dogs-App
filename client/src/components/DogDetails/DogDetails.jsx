@@ -1,4 +1,6 @@
 import React from "react";
+import s from "./DogDetails.module.css";
+import { AiFillHome } from "react-icons/ai";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -12,21 +14,45 @@ const DogDetails = () => {
 
   useEffect(() => {
     dispatch(findByID(idRaza));
-    //console.log(idRaza);
-  }, [dispatch,idRaza]);
-  //let {name} =dogs[0]
+  }, [dispatch, idRaza]);
+ 
 
   return dogs?.map((e, i) => (
-    <div key={e.id}>
-      <Link to='/home'><button>Return home</button></Link>
-      <h1>{e.name}</h1>
-      <h2>{e.temperament + " "}</h2>
-      <h3>{e.weight_min}</h3>
-      <h3>{e.weight_max}</h3>
-      <h3>{e.height_min}</h3>
-      <h3>{e.height_max}</h3>
-      <h3>{e.life_span}</h3>
-      <img src={e.image} alt="Debería haber una foto/" />
+    <div key={e.id} className={s.container}>
+       <Link to="/home" className={s.home}>
+          <AiFillHome className={s.home} />
+        </Link>
+      <div className={s.card}>
+       
+        <h1 className={s.name}>{e.name}</h1>
+        <img src={e.image} alt="Debería haber una foto/" className={s.img} />
+
+        <div>
+          <h3 className={s.w}>
+            {" "}
+            Weight: {e.weight_min} - {e.weight_max} kgs
+          </h3>
+          {/* className={`${s.w}``${s.h}`} */}
+          <h4 className={s.w}>
+            {" "}
+            Height: {e.height_min} - {e.height_max} cms
+          </h4>
+        </div>
+        <div >
+          {Array.isArray(e.temperament) ? (
+            e.temperament.map((e) => (
+              <p key={e} className={s.temperaments}>
+                {" "}
+                <span className={s.temperaments2}>{e}</span>{" "}
+              </p>
+            ))
+          ) : (
+            <span className={s.temperaments2}>Without temperament</span>
+          )}
+        </div>
+
+        <h4 className={s.lspan}>Life span {e.life_span}</h4>
+      </div>
     </div>
   ));
 };

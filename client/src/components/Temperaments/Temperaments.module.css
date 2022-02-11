@@ -1,3 +1,4 @@
+
 .select{
     border: none;
     box-shadow: 1px 1px 11px black;
@@ -8,8 +9,10 @@
     cursor:pointer;
     padding: 10px;
     outline: none;
-  
+    
+    
 }
 .select:hover{
-    background-color: aquamarine;
- }
+    background-color: aquamarine; 
+  
+}

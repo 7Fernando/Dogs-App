@@ -3,21 +3,28 @@ import "./App.css";
 import LandingPage from "./components/LandingPage/LandingPage";
 import Nav from "./components/Nav/Nav";
 import Home from "./components/Home/Home";
-import Temperaments from './components/Temperaments/Temperaments'
+import Temperaments from "./components/Temperaments/Temperaments";
 import CreateDog from "./components/CreateDog/CreateDog";
 import DogDetails from "./components/DogDetails/DogDetails";
-import { AiFillHome } from "react-icons/ai";
-//className={styles.home2} onClick={refreshPage} 
+
+//className={styles.home2} onClick={refreshPage}
 function App() {
-  return ( 
+  return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<><Nav /> <LandingPage /> </>} />
+        <Route
+          path="/"
+          element={
+            <>
+              <Nav /> <LandingPage />{" "}
+            </>
+          }
+        />
 
         <Route path="/home" element={<Home />} />
         <Route path="/temperament" element={<Temperaments />} />
-        <Route path="/dog" element={<> <CreateDog/>  <AiFillHome /></> }/>
-        <Route path="/dogs/:idRaza" element={<DogDetails />}/>
+        <Route path="/dog" element={<CreateDog />} />
+        <Route path="/dogs/:idRaza" element={<DogDetails />} />
       </Routes>
     </div>
   );

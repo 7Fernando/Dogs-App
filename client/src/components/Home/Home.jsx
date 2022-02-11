@@ -34,7 +34,7 @@ const Home = () => {
       <div>
         <h2>DOG NOT FOUND</h2>
         <Link to="/home">
-          <button onClick={refreshPage}>Return home</button>
+           <AiFillHome className={styles.home2} onClick={refreshPage} />
         </Link>
       </div>
     );
@@ -50,7 +50,7 @@ const Home = () => {
     //Change Page
     let paginate = (number) => setCurrentPage(number);
 
-    return (
+    return ( 
       <div>
         <ul className={styles.ul1}>
           <li>

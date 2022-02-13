@@ -63,7 +63,7 @@
 }
 
 .temperaments {
-  font-size: 1rem;
+  font-size: 1.2rem;
   display: inline-block;
   margin-right: 3px;
 }
@@ -88,8 +88,8 @@
 }
 .w {
   display: inline-block;
-  font-size: 1rem;
-  margin-right: 20px;
+  font-size: 1.1rem;
+  margin-right: 12px;
   margin-left: 15px;
   background-color: rgb(104, 245, 255);
   /* border:solid 0.5px black; */
@@ -97,7 +97,7 @@
   padding: 5px;
 }
 .lspan {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 
   background-color: yellow;
   border-radius: 15px;

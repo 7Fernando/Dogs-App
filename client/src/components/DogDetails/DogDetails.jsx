@@ -7,18 +7,26 @@ import { useParams } from "react-router-dom";
 import { findByID } from "../../redux/actions/actions";
 import { Link } from "react-router-dom";
 import HomeIcon from "../../assets/homeIcon.png";
+import dogGif from '../../assets/dogGif.gif'
 
 const DogDetails = () => {
   const { idRaza } = useParams();
   const dispatch = useDispatch();
-  const dogs = useSelector((s) => s.dogs); 
+  const dogs = useSelector((s) => s.idDog); 
 
   useEffect(() => {
     dispatch(findByID(idRaza));
     window.scrollTo(0, 0);
   }, [dispatch, idRaza]);
  
-
+  if (dogs.length === 0) {
+    return (
+      <>
+        <h2> Loading...</h2>
+        <img src={dogGif} alt="gif" />
+      </>
+    )
+  }
 
 
   return dogs?.map((e, i) => (
@@ -59,7 +67,8 @@ const DogDetails = () => {
         <h4 className={s.lspan}>Life span {e.life_span}</h4>
       </div>
     </div>
-  ));
+  ))
+          
 };
 
 export default DogDetails;

@@ -4,6 +4,7 @@ const initialState = {
   dogs: [],
   temperaments: [],
   origin: [],
+  idDog: [],
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -92,7 +93,7 @@ const rootReducer = (state = initialState, action) => {
       console.log(idDog);
       return{
         ...state,
-        dogs: idDog
+        idDog: idDog
       }
       case "searchADog":
         let dogFound = action.payload;

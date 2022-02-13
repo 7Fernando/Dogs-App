@@ -50,6 +50,7 @@ export const filterByTemperament = (temperament) => {
 export const findByID = (id) => async (dispatch) => {
   const response = await fetch(`http://localhost:3001/dogs/${id}`);
   const json = await response.json();
+  console.log(json)
   return dispatch({ type: "findByID", payload: json });
 };
 

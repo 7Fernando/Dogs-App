@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { createDog } from "../../redux/actions/actions";
 import Temperaments from "../Temperaments/Temperaments";
 // import { AiFillHome } from "react-icons/ai";
-import HomeIcon from '../../assets/homeIcon.png'
+import HomeIcon from "../../assets/homeIcon.png";
 
 const CreateDog = () => {
   const [input, setInput] = useState({
@@ -74,7 +74,7 @@ const CreateDog = () => {
     if (input2.weight_min > input2.weight_max) {
       errors2.weight_min = "Weight Min must be less than Weight Max";
     }
-    console.log(errors2);
+    // console.log(errors2);
     return errors2;
   }
 
@@ -102,14 +102,14 @@ const CreateDog = () => {
   //console.log(input.temperament);
   const dispatch = useDispatch();
 
-  function refreshPage() {
-    window.location.reload(false);
-  }
+  // function refreshPage() {
+  //   window.location.reload(false);
+  // }
 
   function handleOnSubmit(e) {
     e.preventDefault();
     // console.log(input);
-    console.log(e);
+    // console.log(e);
     const validation =
       input.temperament.length > 0 &&
       input.name !== "" &&
@@ -128,9 +128,10 @@ const CreateDog = () => {
         timer: 4000,
         timerProgressBar: true,
       });
-      setTimeout(() => {
-        refreshPage();
-      }, 5000);
+      e.target.reset();
+      // setTimeout(() => {
+      //   refreshPage();
+      // }, 5000);
     } else
       Swal.fire({
         title: "You must fill all the fields!",
@@ -140,6 +141,7 @@ const CreateDog = () => {
       });
   }
   function deleteTemperament(e) {
+    // console.log(e);
     setInput({
       ...input,
       temperament: input.temperament.filter((temperament) => temperament !== e),
@@ -148,11 +150,13 @@ const CreateDog = () => {
   //form action="The action attribute specifies where to send the form-data when a form is submitted.">
   return (
     <div className={s.container}>
+      
       <Link to="/home" className={s.home}>
         {/* <AiFillHome className={s.home} /> */}
         <img src={HomeIcon} alt="Home-Icon" className={s.imgHomes} />
       </Link>
       <form id="form" onSubmit={handleOnSubmit} className={s.form}>
+        <div className={s.inputs33}>
         <div className={s.name}>
           <label htmlFor="name" className={s.label}>
             Name:{" "}
@@ -244,11 +248,17 @@ const CreateDog = () => {
           />
           {errors.weight_min && <p className={s.msg2}>optional</p>}
         </div>
+        <div>
         <button type="submit" className={s.subbtn}>
           Create!
         </button>
-      </form>
-      <form className={s.form2} onSubmit={handleOnSubmit}>
+        </div>
+   
+      </div>
+     
+
+
+      <div className={s.form2} >
         <div className={s.name2}>
           <Temperaments name="temperament" onClick={handleInputTemps} />
         </div>
@@ -265,7 +275,7 @@ const CreateDog = () => {
                   </button>{" "}
                   <div>
                     <p>
-                      <p className={s.t}>{e}</p>
+                      <span className={s.t}>{e}</span>
                     </p>
                   </div>
                 </div>
@@ -273,7 +283,12 @@ const CreateDog = () => {
             );
           })}
         </div>
+     
+      </div>
+
+
       </form>
+
     </div>
   );
 };

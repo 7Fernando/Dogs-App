@@ -47,24 +47,31 @@
   background-color: aquamarine; 
   
 }
+.inputs33{
+  width: 45%;
+  margin: 7px;
+}
+
 
 .form {
-  background-color: transparent;
+ 
   /* background: linear-gradient(to rigth, rgb(255, 255, 255),aquamarine); */
-  width: 45%;
+  width: 100%;
+  
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 5px;
+  flex-direction: row;
+  /* align-items: center; */
+  /* margin-top: 5px; */
   justify-content:space-evenly;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
 }
 .form2 {
   background-color: aquamarine;
   
   width: 55%;
-  /* display: flex;
-  flex-direction: row;
+   /* display: flex;
+   flex-direction: column; */
+  /*flex-direction: row;
   justify-content: flex-start; */
   
 }

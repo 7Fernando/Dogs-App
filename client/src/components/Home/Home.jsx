@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./Home.module.css";
+import dogGif from '../../assets/dogGif.gif'
 import Dogs from "../Dogs/Dogs";
 import Pagination from "../Pagination/Pagination";
 import { fetchDogs } from "../../redux/actions/actions";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import Filters from "../Filters/Filters";
 import { Link } from "react-router-dom";
@@ -55,7 +55,14 @@ const Home = () => {
   
     //Change Page
     let paginate = (number) => setCurrentPage(number);
-
+    if (dogs.length === 0) {
+      return (
+        <>
+          <h2> Loading...</h2>
+          <img src={dogGif} alt="gif" />
+        </>
+      );
+    }
     return (
       <div>
         <ul className={styles.ul1}>

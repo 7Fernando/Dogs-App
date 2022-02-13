@@ -1,8 +1,8 @@
 import React from "react";
 import Dog from "../Dog/Dog";
-import s from './Dogs.module.css';
+import s from "./Dogs.module.css";
 
-const Dogs = ({ dogs, loading }) => {
+const Dogs = ({ dogs }) => {
   // useEffect(() => {
   //   window.scrollTo(0, 0)
   // }, []);
@@ -13,12 +13,10 @@ const Dogs = ({ dogs, loading }) => {
       </div>
     );
   } else {
-    if (loading === 0) {
-      return <h2> Los doggys están cargando...</h2>;
-    }
+   
 
     return (
-      <div >
+      <div>
         {dogs?.map((e, i) => {
           return (
             <div key={e.id} className={s.container}>

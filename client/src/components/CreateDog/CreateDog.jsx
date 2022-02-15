@@ -136,7 +136,7 @@ const CreateDog = () => {
 
       setTimeout(() => {
         refreshPage();
-      }, 4000);
+      }, 3000);
     } else{
       // console.log(input.name)
       // Swal.fire({

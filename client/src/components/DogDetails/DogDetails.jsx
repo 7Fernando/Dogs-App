@@ -4,10 +4,11 @@ import s from "./DogDetails.module.css";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { findByID } from "../../redux/actions/actions";
+import { findByID, clear } from "../../redux/actions/actions";
 import { Link } from "react-router-dom";
 import HomeIcon from "../../assets/homeIcon.png";
-import dogGif from '../../assets/dogGif.gif'
+import dogGif from '../../assets/dogGif.gif';
+
 
 const DogDetails = () => {
   const { idRaza } = useParams();
@@ -15,6 +16,7 @@ const DogDetails = () => {
   const dogs = useSelector((s) => s.idDog); 
 
   useEffect(() => {
+    dispatch(clear())
     dispatch(findByID(idRaza));
     window.scrollTo(0, 0);
   }, [dispatch, idRaza]);

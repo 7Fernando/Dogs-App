@@ -90,18 +90,23 @@ const rootReducer = (state = initialState, action) => {
 
     case "findByID":
       let idDog = action.payload;
-      console.log(idDog);
-      return{
+      // console.log(idDog);
+      return {
         ...state,
-        idDog: idDog
-      }
-      case "searchADog":
-        let dogFound = action.payload;
-        console.log(dogFound);
-        return{
-          ...state,
-          dogs: dogFound
-        }
+        idDog: idDog,
+      };
+    case "clear":
+      return {
+        ...state,
+        idDog: [],
+      };
+    case "searchADog":
+      let dogFound = action.payload;
+      console.log(dogFound);
+      return {
+        ...state,
+        dogs: dogFound,
+      };
 
     default:
       return state;

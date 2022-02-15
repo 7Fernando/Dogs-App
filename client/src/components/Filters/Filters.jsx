@@ -1,12 +1,13 @@
 import React from "react";
 import s from "./Filters.module.css";
-//import { useEffect } from "react";
+
 import { useDispatch } from "react-redux";
 import { orderByName } from "../../redux/actions/actions";
 import { orderByWeight } from "../../redux/actions/actions";
 import { orderByOrigin } from "../../redux/actions/actions";
 import Temperaments from "../Temperaments/Temperaments";
 import { filterByTemperament } from "../../redux/actions/actions";
+
 
 const Filters = () => {
   const dispatch = useDispatch();
@@ -15,7 +16,9 @@ const Filters = () => {
   function order(e) {
     e.preventDefault();
     //console.log(e.target.value);
+    
     dispatch(orderByName(e.target.value));
+    
   }
 
   function weight(e) {
@@ -42,17 +45,18 @@ const Filters = () => {
         <div className={s.container}>
           <li className={s.li} >
             {/* <label htmlFor="Order">Order by name: </label> */}
+           
             <select onChange={(e) => order(e)} className={s.select}>
               <option value="choose" hidden className={s.option} >
                 {" "}
                 Order by name{" "}
               </option>
-              <option defaultValue value="asc"  className={s.option}>
-                {" "}
-                A - Z{" "}
-              </option>
+              
+              <option defaultValue value="asc"  className={s.option}> A - Z </option> 
+              
               <option value="des" className={s.option}> Z - A </option>
             </select>
+            
             <br /> <br />
           </li>
         </div>
@@ -89,21 +93,6 @@ const Filters = () => {
         <div className={s.container}>
           <li className={s.li}>
             <Temperaments onClick={temperament} />
-
-            {/*<label htmlFor="">Filter by temperament: </label>
-        <br />
-
-       {temperaments.map((t, i) => {
-          return (
-            <React.Fragment key={t + "m"}>
-              <label htmlFor={t} key={t + "n"}>
-                {" "}
-                {t + " "}
-                <input type="checkbox" name={t} key={t} />
-              </label>
-            </React.Fragment>
-          );
-        })} */}
           </li>
         </div>
       </ul>

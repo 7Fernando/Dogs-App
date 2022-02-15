@@ -162,23 +162,29 @@
   margin-left: -75px;
   background-color: transparent;
   margin-top: 2px;
-  font-family: 'Secular One';
+  /* font-family: 'Secular One'; */
+  font-weight: bold;
   color: rgb(0, 0, 0);
+  
 }
 .btn:hover {
   transform: translateY(-5%);
   box-shadow: 1px 1px 11px black;
 }
+
 .p:hover {
   transform: translateY(-15%);
 }
 
 .subbtn{
   background-color: transparent;
-  font-family: 'Secular One';
+  /* font-family: 'Secular One'; */
+  font-weight: bold;
   font-size: 1.3rem;
   box-shadow: 1px 2px 1px 1px rgb(0, 0, 0);
   border: none;
+  transition-property: transform, font-size,background-color,box-shadow;
+  transition-duration: 0.5s;
 }
 
 .subbtn:hover{

@@ -20,7 +20,7 @@ const dogsApi = async () => {
       id: dog.id,
       name: dog.name,
       image: dog.image.url,
-      temperament: dog.temperament === undefined || dog.temperament === null ? null : dog.temperament.split(", "),//dog.temperament,
+      temperament: dog.temperament === undefined || dog.temperament === null ? null : dog.temperament.split(", "),//dog.temperament,["Stubborn", "Curious", "Playful", "Adventurous", "Active", "Fun-loving"]
       weight_min: Number(dog.weight.metric.slice(0, 1)),
       weight_max: Number(dog.weight.metric.slice(4)),
       height_min: Number(dog.height.metric.slice(0, 1)),

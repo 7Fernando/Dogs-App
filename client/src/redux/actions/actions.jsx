@@ -6,6 +6,12 @@ export const fetchDogs = () => async (dispatch) => {
   return dispatch({ type: "fetchDogs", payload: json });
 };
 
+//  export const fetchDogs = () => (dispatch) =>{
+//   const json = fetch("http://localhost:3001/dogs").then(data => data.json())
+//   json.then( data2 =>
+//    dispatch({type: 'fetchDogs', payload: data2 }))
+// }   
+
 export const getTemperaments = () => async (dispatch) => {
   const response = await fetch("http://localhost:3001/temperament");
   const json = await response.json();
@@ -16,9 +22,12 @@ export const createDog = (data) => async (dispatch) => {
   const dog = await axios
     .post("http://localhost:3001/dog", data)
     .then((r) => r.data);
+    // console.log(dog)
   return dispatch({ type: "createDog", payload: dog });
 };
-
+/* export const createDog = (data) => async (dispatch) =>{
+  const dog = await axios.post("http://localhost:3001/dog", data)
+} */
 export const orderByName = (order) => {
   return {
     type: "orderByName",

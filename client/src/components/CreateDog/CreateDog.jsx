@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import s from "./CreateDog.module.css";
-import Swal from "sweetalert2";
+// import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { createDog } from "../../redux/actions/actions";
@@ -29,7 +29,7 @@ const CreateDog = () => {
     if (!input2.name) {
       errors2.name = "Name is required";
     }
-
+    
     if (!input2.height_min) {
       errors2.height_min = "Min height is required";
     }
@@ -102,9 +102,9 @@ const CreateDog = () => {
   //console.log(input.temperament);
   const dispatch = useDispatch();
 
-  // function refreshPage() {
-  //   window.location.reload(false);
-  // }
+  function refreshPage() {
+    window.location.reload(false);
+  }
 
   function handleOnSubmit(e) {
     e.preventDefault();
@@ -118,28 +118,38 @@ const CreateDog = () => {
       input.weight_min !== "" &&
       input.weight_max !== "" &&
       input.life_span !== "";
+      
+    
     if (validation) {
       dispatch(createDog(input));
-      Swal.fire({
-        title: "Dog created!",
-        // text: 'Do you want to continue',
-        icon: "success",
-        confirmButtonText: "GREAT!",
-        timer: 4000,
-        timerProgressBar: true,
-      });
-      e.target.reset();
-      // setTimeout(() => {
-      //   refreshPage();
-      // }, 5000);
-    } else
-      Swal.fire({
-        title: "You must fill all the fields!",
-        // text: 'Do you want to continue',
-        icon: "info",
-        confirmButtonText: "GREAT!",
-      });
-  }
+      alert("Dog created!")
+      // Swal.fire({
+      //   title: "Dog created!",
+      //   // text: 'Do you want to continue',
+      //   icon: "success",
+      //   confirmButtonText: "GREAT!",
+      //   timer: 4000,
+      //   timerProgressBar: true,
+      // });
+
+      // e.target.reset();
+
+      setTimeout(() => {
+        refreshPage();
+      }, 4000);
+    } else{
+      // console.log(input.name)
+      // Swal.fire({
+      //   title: "You must fill all the fields!",
+      //   // text: 'Do you want to continue',
+      //   icon: "info",
+      //   confirmButtonText: "GREAT!",
+      // });
+      alert("You must fill all the fields!")
+      // console.log(input.name)
+    }
+    }
+
   function deleteTemperament(e) {
     // console.log(e);
     setInput({

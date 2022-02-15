@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Secular+One&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Lobster&family=Secular+One&display=swap"); */
 
 .menuUl{
     list-style: none;
@@ -24,7 +24,8 @@
     background-color: transparent;
     font-size: 1.2rem;
     margin-left: 25px;
-    font-family: 'Secular One';
+    /* font-family: 'Secular One'; */
+    font-weight: bold;
     cursor:pointer;
     padding: 10px;
     outline: none;

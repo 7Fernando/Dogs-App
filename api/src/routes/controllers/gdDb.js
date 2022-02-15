@@ -15,21 +15,28 @@ const dogsDB = async () => {
     //   name: name,
     // },
   });
- const y = await infoDB.map(infoDB => infoDB = {
-  id: infoDB.id,
-  name: infoDB.name,
-  height_min: infoDB.height_min,
-  height_max: infoDB.height_max,
-  weight_min: infoDB.weight_min,
-  weight_max: infoDB.weight_max,
-  life_span: infoDB.life_span,
-  createInDb: infoDB.createInDb,
-  image: infoDB.image,
-  temperament: infoDB.temperaments.map( e => e.name)
+  // console.log("hola22",infoDB[0])
+  /*dogsDb = await Breed.findAll({
+    include: {
+      model: Temperament,
+      attributes: ['name']
+    }
+  }) */
+ const dogs = await infoDB.map(d => d = {
+  id: d.id,
+  name: d.name,
+  height_min: d.height_min,
+  height_max: d.height_max,
+  weight_min: d.weight_min,
+  weight_max: d.weight_max,
+  life_span: d.life_span,
+  createInDb: d.createInDb,
+  image: d.image,
+  temperament: d.temperaments.map( e => e.name)
  
 }) 
- //console.log('hola',y)
-  return y;//infoDB[0].dataValues
+ //console.log('hola',dogs)
+  return dogs;//infoDB[0].dataValues
 };
 
 module.exports = {

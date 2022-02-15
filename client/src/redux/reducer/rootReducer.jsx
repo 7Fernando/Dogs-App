@@ -30,13 +30,13 @@ const rootReducer = (state = initialState, action) => {
       const sortArr =
         action.payload === "asc"
           ? [...state.origin].sort((a, b) => {
-              if (a.name < b.name) return -1;
-              if (a.name > b.name) return 1;
+              if (a.name.toLowerCase() < b.name.toLowerCase()) return -1;
+              if (a.name.toLowerCase() > b.name.toLowerCase()) return 1;
               return 0;
             })
           : [...state.origin].sort((a, b) => {
-              if (a.name > b.name) return -1;
-              if (a.name < b.name) return 1;
+              if (a.name.toLowerCase() > b.name.toLowerCase()) return -1;
+              if (a.name.toLowerCase() < b.name.toLowerCase()) return 1;
               return 0;
             });
 

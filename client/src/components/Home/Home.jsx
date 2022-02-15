@@ -15,6 +15,7 @@ import HomeIcon from "../../assets/homeIcon.png";
 const Home = () => {
   //const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+  console.log(currentPage)
   const [dogsPerPage] = useState(8);
   //const [dogsPerPage, setDogsPerPage] = useState(8);
   let dispatch = useDispatch();
@@ -33,7 +34,7 @@ const Home = () => {
   if (dogs.msg) {
     return (
       <div>
-        <h2>DOG NOT FOUND</h2>
+        <h2>{dogs.msg}</h2>
         <Link to="/home">
           <img
             src={HomeIcon}
@@ -86,7 +87,7 @@ const Home = () => {
         </ul>
         <ul className={styles.menuUl}>
           <li className={styles.li}>
-            <Filters />
+            <Filters props={setCurrentPage}/>
           </li>
         </ul>
 

@@ -5,7 +5,8 @@
     background-color: transparent;
     font-size: 1.2rem;
     margin-left: 25px; 
-    font-family: 'Secular One';
+    /* font-family: 'Secular One'; */
+    font-weight: bold;
     cursor:pointer;
     padding: 10px;
     outline: none;

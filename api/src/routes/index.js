@@ -137,6 +137,10 @@ router.post("/dog", async (req, res) => {
         console.log(error);
       }
     }
+    // name[0].toUpperCase();
+    // console.log(name[0].toUpperCase())
+   
+    // console.log(name)
     let parameters =
       name &&
       height_min &&
@@ -162,6 +166,7 @@ router.post("/dog", async (req, res) => {
       let findTemperamentDB = await Temperament.findAll({
         where: { name: temperament },
       }); //[{},{},{}]
+       // name: { [Op.in]: temperament }
       // console.log('jeje',findTemperamentDB)
       //j = await findTemperamentDB.map( e => e.dataValues.name)
       //console.log(findTemperamentDB)

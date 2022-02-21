@@ -29,7 +29,7 @@ router.get("/dogs", async (req, res) => {
     //console.log('lala', dogsDB2)
 
     const allDogs = [...dogsApi2, ...dogsDB2]; //await dogsApi2.concat(dogsDB2)
-
+  //Usar optimizaciones 
     if (name) {
       const dogName = allDogs.filter((d) => {
         // console.log(d)
@@ -192,4 +192,25 @@ router.post("/dog", async (req, res) => {
   }
 });
 
+router.post("/temp", async (req, res)=>{
+   const {temp} = req.body
+   let t = await Temperament.create({
+    name: temp
+   })
+   res.send(t)
+})
+
+
+
+// router.get('/hola', async (req, res, next)=>{
+//   try {
+//     const r  = await hola()
+//     res.send(r)
+//   } catch (error) {
+//     next(error)
+//   }
+// })
+
 module.exports = router;
+
+

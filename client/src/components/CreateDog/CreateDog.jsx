@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import s from "./CreateDog.module.css";
-// import Swal from "sweetalert2";
+import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { createDog } from "../../redux/actions/actions";
@@ -122,15 +122,15 @@ const CreateDog = () => {
     
     if (validation) {
       dispatch(createDog(input));
-      alert("Dog created!")
-      // Swal.fire({
-      //   title: "Dog created!",
-      //   // text: 'Do you want to continue',
-      //   icon: "success",
-      //   confirmButtonText: "GREAT!",
-      //   timer: 4000,
-      //   timerProgressBar: true,
-      // });
+      // alert("Dog created!")
+      Swal.fire({
+        title: "Dog created!",
+        // text: 'Do you want to continue',
+        icon: "success",
+        confirmButtonText: "GREAT!",
+        timer: 4000,
+        timerProgressBar: true,
+      });
 
       // e.target.reset();
 
@@ -139,13 +139,13 @@ const CreateDog = () => {
       }, 3000);
     } else{
       // console.log(input.name)
-      // Swal.fire({
-      //   title: "You must fill all the fields!",
-      //   // text: 'Do you want to continue',
-      //   icon: "info",
-      //   confirmButtonText: "GREAT!",
-      // });
-      alert("You must fill all the fields!")
+      Swal.fire({
+        title: "You must fill all the fields!",
+        // text: 'Do you want to continue',
+        icon: "info",
+        confirmButtonText: "GREAT!",
+      });
+      // alert("You must fill all the fields!")
       // console.log(input.name)
     }
     }

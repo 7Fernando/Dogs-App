@@ -12,10 +12,11 @@ import SearchBar from "../SearchBar/SearchBar";
 // import { AiFillHome } from "react-icons/ai";
 import HomeIcon from "../../assets/homeIcon.png";
 
+
 const Home = () => {
   //const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  console.log(currentPage)
+  // console.log(currentPage)
   const [dogsPerPage] = useState(8);
   //const [dogsPerPage, setDogsPerPage] = useState(8);
   let dispatch = useDispatch();
@@ -56,6 +57,7 @@ const Home = () => {
   
     //Change Page
     let paginate = (number) => setCurrentPage(number);
+
     if (dogs.length === 0) {
       return (
         <>
@@ -90,7 +92,7 @@ const Home = () => {
             <Filters props={setCurrentPage}/>
           </li>
         </ul>
-
+ 
         <Pagination
           dogsPerPage={dogsPerPage}
           totalDogs={dogs.length}

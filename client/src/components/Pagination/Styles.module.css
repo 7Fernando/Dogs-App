@@ -30,6 +30,9 @@
     transform: translateY(-3%);
    
 }
+/* .link:active, .btn:active,.cont:active{
+  background-color: red;
+} */
 
 .link {
   text-decoration: none;

@@ -25,7 +25,7 @@ const Dogs = ({ dogs }) => {
           );
         })}
       </div>
-    );
+    ); 
   }
 };
 export default Dogs;

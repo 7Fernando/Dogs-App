@@ -10,10 +10,7 @@ const dogsDB = async () => {
             attributes: [],
         },
     }
-    // where: {
-      
-    //   name: name,
-    // },
+    
   });
   // console.log("hola22",infoDB[0])
   /*dogsDb = await Breed.findAll({

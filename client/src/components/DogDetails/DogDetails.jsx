@@ -28,7 +28,7 @@ const DogDetails = () => {
         <img src={dogGif} alt="gif" />
       </>
     )
-  }
+  } 
 
 
   return dogs?.map((e, i) => (

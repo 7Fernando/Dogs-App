@@ -50,7 +50,7 @@ export const orderByOrigin = (origin) => {
 
 export const filterByTemperament = (temperament) => {
   return {
-    type: "filterByTemperament",
+    type: "filterByTemperament",//pasar a constantes
     payload: temperament,
   };
 };

@@ -45,5 +45,20 @@ module.exports = (sequelize) => {
      type: DataTypes.STRING,
    }
   });
- 
+ /*sequelize.define('Breed', {
+   type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+      primaryKey: true,
+      allowNull: false,
+   id: {
+     type: Datatypes.UUID,
+     defaultValue: DataTypes.UUIDV4,
+     primaryKey: true,
+     allowNull: false
+   }
+   name:{
+     type: DataTypes.String,
+     allowNull: false
+   }
+ }) */
 };
